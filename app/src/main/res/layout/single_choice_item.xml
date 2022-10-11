@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.SingleChoiceViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/question_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/question_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_blue_bg_5"
+                android:padding="5dp"
+                android:text="@{viewModel.questionType}"
+                android:textColor="@color/white"
+                android:textSize="13sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/question_type"
+                android:text="@{viewModel.questionTitle}"
+                android:textSize="16sp"
+                tools:text="驾驶机动车驾驶机动车驾驶机动车驾驶机动车驾驶机动车驾驶机动车驾驶机动车"></TextView>
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:id="@+id/single_choice_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question_ll"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            binding:onCheckedChangedCommand="@{viewModel.singleGroup}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:id="@+id/single_answer_A"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/circle_line_black"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <TextView
+                    android:id="@+id/single_answer_textA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/single_answer_A"
+                    android:text="@{viewModel.singleAnswerA}"
+                    android:textSize="16sp"
+                    tools:text="答案A"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:id="@+id/single_answer_B"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/circle_line_black"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="B"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <TextView
+                    android:id="@+id/single_answer_textB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/single_answer_B"
+                    android:text="@{viewModel.singleAnswerB}"
+                    android:textSize="16sp"
+                    tools:text="答案B"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:id="@+id/single_answer_C"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/circle_line_black"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="C"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <TextView
+                    android:id="@+id/single_answer_textC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/single_answer_C"
+                    android:text="@{viewModel.singleAnswerC}"
+                    android:textSize="16sp"
+                    tools:text="答案C"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:id="@+id/single_answer_D"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/circle_line_black"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="D"
+                    android:textSize="16sp">
+
+                </RadioButton>
+
+                <TextView
+                    android:id="@+id/single_answer_textD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/single_answer_D"
+                    android:text="@{viewModel.singleAnswerD}"
+                    android:textSize="16sp"
+                    tools:text="答案D"></TextView>
+            </RelativeLayout>
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+</layout>

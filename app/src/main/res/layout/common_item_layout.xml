@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.HomeItemCommonItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/safe_check_rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/activity_banner"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:background="@drawable/round_white_bg_10"
+        binding:onClickCommand="@{viewModel.commonItemClick}">
+
+        <ImageView
+            android:id="@+id/safe_check_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            binding:drawableRes="@{viewModel.commonItemImage}">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/safe_check_img"
+            android:text="@{viewModel.commonItemTitle}"
+            android:textSize="18sp"></TextView>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrow_right"></ImageView>
+
+    </RelativeLayout>
+</layout>

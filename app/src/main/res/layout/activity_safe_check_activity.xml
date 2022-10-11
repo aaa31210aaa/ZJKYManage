@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.SafeCheckViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_shallow">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <ImageView
+            android:id="@+id/activity_banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/banner_height"
+            android:layout_below="@+id/include"
+            android:scaleType="fitXY"
+            android:src="@drawable/main_banner_img">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:id="@+id/safe_check_rl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/activity_banner"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_white_bg_10"
+            binding:onClickCommand="@{viewModel.safeCheckClick}">
+
+            <ImageView
+                android:id="@+id/safe_check_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/safe_check_img">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/safe_check_img"
+                android:text="安全检查表"
+                android:textSize="18sp"></TextView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrow_right"></ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/risk_register_rl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/safe_check_rl"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_white_bg_10"
+            binding:onClickCommand="@{viewModel.riskRegisterClick}">
+
+            <ImageView
+                android:id="@+id/risk_register"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/risk_register">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/risk_register"
+                android:text="隐患登记"
+                android:textSize="18sp"></TextView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrow_right"></ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/risk_rectification_rl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/risk_register_rl"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_white_bg_10"
+            binding:onClickCommand="@{viewModel.riskRectificationClick}">
+
+            <ImageView
+                android:id="@+id/risk_rectification"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/risk_rectification">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/risk_rectification"
+                android:text="隐患整改"
+                android:textSize="18sp"></TextView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrow_right"></ImageView>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/review_rl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/risk_rectification_rl"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_white_bg_10"
+            binding:onClickCommand="@{viewModel.reviewClick}">
+
+            <ImageView
+                android:id="@+id/review_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/review">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/review_img"
+                android:text="复查验收"
+                android:textSize="18sp"></TextView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrow_right"></ImageView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

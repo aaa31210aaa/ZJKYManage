@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.RiskListViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers"></import>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.RiskListActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/include">
+
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/include"
+                binding:itemBinding="@{viewModel.itemBinding}"
+                binding:items="@{viewModel.itemViewModels}"
+                binding:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                binding:lineManager="@{LineManagers.horizontal()}">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            android:src="@drawable/save_draft"
+            app:backgroundTint="@color/main_color"
+            binding:onClickCommand="@{viewModel.toDraftListCommand}">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </RelativeLayout>
+</layout>

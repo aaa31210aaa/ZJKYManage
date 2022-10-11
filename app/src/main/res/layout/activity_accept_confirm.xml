@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.AcceptConfirmViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.AcceptConfirmActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否合格"
+                android:textSize="@dimen/sp_16"></TextView>
+
+            <TextView
+                android:id="@+id/sfhg"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text=""
+                android:paddingLeft="@dimen/dp_10"
+                android:textSize="@dimen/sp_16"
+                android:gravity="center_vertical"
+                binding:onClickCommand="@{viewModel.sfhgClick}"
+                android:background="@drawable/circle_solid_white_5"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="验收时间"
+                android:textSize="@dimen/sp_16"></TextView>
+
+            <TextView
+                android:id="@+id/accept_date"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text=""
+                android:textSize="@dimen/sp_16"
+                android:paddingLeft="@dimen/dp_10"
+                android:gravity="center_vertical"
+                binding:onClickCommand="@{viewModel.acceptDateClick}"
+                android:background="@drawable/circle_solid_white_5"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="验收参与人"
+                android:textSize="@dimen/sp_16"></TextView>
+
+            <EditText
+                android:id="@+id/acceptParticipants"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="30dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text=""
+                android:hint="请填写验收参与人"
+                android:paddingLeft="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/sp_16"
+                android:background="@drawable/circle_solid_white_5"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="验收意见"
+                android:textSize="@dimen/sp_16"></TextView>
+
+            <EditText
+                android:id="@+id/acceptOpinion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text=""
+                android:gravity="top"
+                android:hint="请填写验收意见"
+                android:padding="@dimen/dp_10"
+                android:textSize="@dimen/sp_16"
+                android:background="@drawable/circle_solid_white_5"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="销号确认人"
+                android:textSize="@dimen/sp_16"></TextView>
+
+            <TextView
+                android:id="@+id/xhqrr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="30dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text=""
+                android:hint="请选择销号确认人"
+                android:paddingLeft="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/sp_16"
+                binding:onClickCommand="@{viewModel.xhqrrClick}"
+                android:background="@drawable/circle_solid_white_5"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

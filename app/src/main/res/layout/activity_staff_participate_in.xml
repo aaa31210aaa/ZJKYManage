@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.StaffParticipateInViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.zhks.safetyproduction.ui.activity.StaffParticipateInActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <ImageView
+            android:id="@+id/staff_participate_banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/banner_height"
+            android:layout_below="@+id/include"
+            android:background="@drawable/main_banner_img"></ImageView>
+
+
+        <RelativeLayout
+            android:id="@+id/safe_check_rl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/staff_participate_banner"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_white_bg_10"
+            binding:onClickCommand="@{viewModel.HiddenDangerReport}">
+
+            <ImageView
+                android:id="@+id/safe_check_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/hidden_danger_report">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/safe_check_img"
+                android:text="隐患举报"
+                android:textSize="18sp"></TextView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrow_right"></ImageView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

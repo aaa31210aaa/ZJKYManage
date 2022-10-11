@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.RiskCheckDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.RiskCheckDetailActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/main_color"
+                android:gravity="center"
+                android:text="保存"
+                android:textColor="@color/white"
+                binding:onClickCommand="@{viewModel.saveCommand}"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+            </View>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/main_color"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"
+                binding:onClickCommand="@{viewModel.submitCommand}"
+                android:textSize="18sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                tools:text="张文国"></TextView>
+
+            <TextView
+                android:id="@+id/deptname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"
+                tools:text="宋家沟北矿区"></TextView>
+
+            <TextView
+                android:id="@+id/evaname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                tools:text="电工"></TextView>
+
+            <TextView
+                android:id="@+id/fxdname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/username"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                tools:text="维修"></TextView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_ccc"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/dj_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="点检地点"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/djAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/dj_address_title"
+                android:background="@drawable/circle_line_gray_5"
+                android:gravity="center_vertical"
+                android:hint="请选择点检地点"
+                android:minWidth="200dp"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textSize="18sp"
+                binding:onClickCommand="@{viewModel.djAddressCommand}"></TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/dj_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="点检时间"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/djDate"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/dj_date_title"
+                android:background="@drawable/circle_line_gray_5"
+                android:gravity="center_vertical"
+                android:minWidth="200dp"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textSize="18sp"
+                binding:onClickCommand="@{viewModel.djDateCommand}"></TextView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_ccc"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="管控措施"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="状态"></TextView>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</layout>

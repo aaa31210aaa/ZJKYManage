@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.NewsItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        binding:onClickCommand="@{viewModel.newsItemCommand}"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/new_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:text="@{viewModel.newsItemTitle}"
+                android:textSize="18sp"
+                tools:text="测试测试"></TextView>
+
+            <TextView
+                android:id="@+id/new_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_item_title"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:layout_marginTop="10dp"
+                android:text="@{viewModel.newsItemDate}"
+                tools:text="2022-03-12 23:15:24.0"></TextView>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/red_yx"
+                android:visibility="@{viewModel.newsIsReadVisible}"></ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_ccc"
+            android:layout_marginTop="10dp"></View>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.CancelCaseDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.CancelCaseDetailActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <LinearLayout
+            android:id="@+id/xiaoanDate_lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:layout_below="@+id/include"
+            android:layout_marginBottom="@dimen/dp_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="销案时间"></TextView>
+
+            <TextView
+                android:id="@+id/xiaoanDate"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/round_white_bg_5"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                binding:onClickCommand="@{viewModel.xiaoanDateCommand}"
+                tools:text=""></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:layout_below="@+id/xiaoanDate_lin"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="销案意见"></TextView>
+
+            <EditText
+                android:id="@+id/xiaoanSupport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="@dimen/dp_5"
+                android:background="@drawable/round_white_bg_5"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text=""></EditText>
+        </LinearLayout>
+
+        <com.zhks.safetyproduction.wight.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.loadingVisible}" />
+    </RelativeLayout>
+</layout>

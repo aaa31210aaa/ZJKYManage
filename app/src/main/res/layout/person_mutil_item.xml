@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.PersonnelMutilItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/multi_item_rl"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/multi_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:text="@{viewModel.multiItemName}"
+            android:textSize="16sp"></TextView>
+
+        <ImageView
+            android:id="@+id/multi_item_ck"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            binding:drawableRes="@{viewModel.multiItemCk}"
+            binding:onClickCommand="@{viewModel.multiItemClick}"
+            android:layout_alignParentRight="true"></ImageView>
+
+    </RelativeLayout>
+</layout>

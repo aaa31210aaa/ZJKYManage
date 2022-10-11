@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/check_detail_item_serial_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circle_solid_green"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        tools:text="测试"></TextView>
+
+    <TextView
+        android:id="@+id/check_detail_item_observation"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text=""
+        android:layout_weight="3"></TextView>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1.5">
+
+        <Switch
+            android:id="@+id/safe_check_detail_item_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:checked="true"
+            android:textOff="关"
+            android:textOn="开"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track">
+
+        </Switch>
+    </RelativeLayout>
+</LinearLayout>

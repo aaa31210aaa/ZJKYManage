@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:background="@drawable/round_white_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/todo_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
+            tools:text="XXX提交的"></TextView>
+
+        <TextView
+            android:id="@+id/current_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/todo_detail_title"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            tools:text="审批中">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/todo_detail_apply_content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/current_state"
+            android:layout_marginTop="10dp"
+            android:text="待办内容"></TextView>
+
+        <TextView
+            android:id="@+id/todo_detail_apply_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/todo_detail_apply_content_title"
+            android:layout_marginTop="10dp"
+            android:minHeight="50dp"
+            android:text=""></TextView>
+    </RelativeLayout>
+
+</LinearLayout>

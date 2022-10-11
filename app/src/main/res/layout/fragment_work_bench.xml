@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.WorkBenchViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/user_info_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_color">
+
+                <ImageView
+                    android:id="@+id/user_head_image"
+                    onClickCommand="@{viewModel.toLoginCommand}"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_default_headimg"
+                    binding:placeholderRes="@{viewModel.headImagePlaceHolder}"
+                    binding:url="@{viewModel.headImageUrl}">
+
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/user_head_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:text="@{viewModel.userName}"
+                        android:textColor="@color/white"
+                        tool:text="测试">
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:text="@{viewModel.deptName}"
+                        android:textColor="@color/white"
+                        tool:text="测试">
+
+
+                    </TextView>
+                </LinearLayout>
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:padding="30dp"-->
+<!--                    android:src="@drawable/setting_image"-->
+<!--                    binding:onClickCommand="@{viewModel.mineSettingClick}"></ImageView>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="210dp"
+                    android:background="@drawable/top_cir"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/gray_shallow">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            binding:onClickCommand="@{viewModel.todoClick}">
+
+                            <ImageView
+                                android:id="@+id/todo_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/mine_to_do">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/todo_img"
+                                android:text="待办事项"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/arrow_right"></ImageView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/gray_shallow">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            binding:onClickCommand="@{viewModel.versionInfoClick}">
+
+                            <ImageView
+                                android:id="@+id/version_info_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/version_info">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/version_info_img"
+                                android:text="简介"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/arrow_right"></ImageView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/gray_shallow">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            binding:onClickCommand="@{viewModel.checkUpdateClick}">
+
+                            <ImageView
+                                android:id="@+id/check_update"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/check_update">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/check_update"
+                                android:text="检查更新"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/arrow_right"></ImageView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/gray_shallow">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            binding:onClickCommand="@{viewModel.changePwdClick}">
+
+                            <ImageView
+                                android:id="@+id/change_pwd"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/change_pwd">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/change_pwd"
+                                android:text="修改密码"
+                                android:textColor="@color/black"
+                                android:textSize="18sp">
+
+                            </TextView>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/arrow_right"></ImageView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_marginBottom="20dp"-->
+<!--                        android:background="@color/gray_shallow"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            binding:onClickCommand="@{viewModel.loadDataClick}">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/load_data_img"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:layout_marginLeft="20dp"-->
+<!--                                android:src="@drawable/load_data">-->
+
+<!--                            </ImageView>-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_toRightOf="@+id/load_data_img"-->
+<!--                                android:text="装载数据"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="18sp">-->
+
+<!--                            </TextView>-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="20dp"-->
+<!--                                android:layout_height="20dp"-->
+<!--                                android:layout_alignParentRight="true"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:layout_marginRight="20dp"-->
+<!--                                android:src="@drawable/arrow_right"></ImageView>-->
+<!--                        </RelativeLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="@{viewModel.signOutVisible}"
+                        android:background="@color/gray_shallow">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            binding:onClickCommand="@{viewModel.signOutCommand}">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:gravity="center"
+                                android:text="退出登录"
+                                android:textColor="@color/red"
+                                android:textSize="18sp">
+
+                            </TextView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

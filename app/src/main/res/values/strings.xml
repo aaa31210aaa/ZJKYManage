@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">中嘉矿业安全管理</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_title">登录</string>
+    <string name="change_pwd_tips">温馨提示：密码需要超过6位</string>
+    <string name="privacy_tip1">依据最新的法律要求，我们更新了用户协议与隐私政策，根据您使用的具体服务和功能，合法合规对您的个人信息进行收集、使用。请您仔细阅读</string>
+    <string name="privacy_tip2">，并确认了解我们对您的个人信息处理原则包括\n1、我们如何收集和使用您的个人信息；\n2、我们如何保存管理您的个人信息；\n3、个人信息安全保护措施；\n4、关于协议更新；\n5、未成年人使用条款；\n6、关于争议解决；</string>
+    <string name="privacy_tip3">SDK名称：友盟+SDK\n第三方名称：友盟同欣（北京）科技有限公司
+\n使用目的：用户资讯推送及用户主动进行资讯的社会化分享
+\n使用场景：用户使用智慧长沙账号登录授权时，系统会采集用户授权的部分行为数据和用户信息，用于业务使用、推送和数据分析
+\n共享方式：SDK本机采集
+\n收集个人信息类型：需要收集您的设备信息（IMEI/MAC/Android ID/IDFA/OpenUDID/GUID/SIM卡IMSI/地理位置等）。第三方隐私政策链接：https://www.umeng.com/page/policy</string>
+    <string name="privacy_tip4">如您同意</string>
+    <string name="privacy_tip5">，请点击"同意"后使用我们的产品和服务。</string>
+</resources>

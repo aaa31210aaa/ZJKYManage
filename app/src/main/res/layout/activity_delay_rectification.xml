@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.DelayRectificationViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.DelayRectificationActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <LinearLayout
+            android:id="@+id/delay_date_ll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_below="@+id/include">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="延期日期"
+                android:layout_margin="10dp"
+                android:textColor="@color/main_color"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/delay_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text=""
+                android:gravity="center"
+                binding:onClickCommand="@{viewModel.delayDateCommand}"
+                android:background="@drawable/round_white_bg_5">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/delay_reson_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/delay_date_ll">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="延期原因"
+                android:textColor="@color/main_color"
+                android:textSize="18sp"></TextView>
+
+            <EditText
+                android:id="@+id/delay_reson_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_white_bg_5"
+                android:minHeight="100dp"
+                android:hint="请输入延迟原因..."
+                android:gravity="top"
+                android:padding="10dp">
+
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="提交"
+            android:gravity="center"
+            android:background="@drawable/circle_solid_main_color_5"
+            android:layout_below="@+id/delay_reson_ll"
+            android:padding="10dp"
+            android:layout_margin="30dp"
+            android:textColor="@color/white"
+            binding:onClickCommand="@{viewModel.delaySubmit}"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <com.zhks.safetyproduction.wight.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.loadingVisible}" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.NoticeDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.zhks.safetyproduction.ui.activity.NoticeDetailActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <TextView
+            android:id="@+id/notice_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/include"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            tools:text="抢修停水通知【开福区】，请大家提前准备好"
+            android:textSize="25sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/release_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/notice_detail_title"
+            android:textSize="16sp"
+            tools:text="发布单位"></TextView>
+
+        <TextView
+            android:id="@+id/release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notice_detail_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:text="2021-11-01 13:30:30">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/notice_detail_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="通知公告内容通知公告内容通知公告内容通知公告内容通知公告内容"
+            android:layout_below="@+id/release_date"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp">
+
+        </TextView>
+    </RelativeLayout>
+</layout>

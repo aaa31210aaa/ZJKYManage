@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.QuestionViewPagerViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.zhks.safetyproduction.adapter.ViewPagerAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.activity.QuestionActivity">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/layout_toolbar"
+                binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+            <!--            <androidx.viewpager.widget.ViewPager-->
+            <!--                android:id="@+id/question_vp"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                binding:adapter="@{adapter}"-->
+            <!--                binding:itemBinding="@{viewModel.itemBinding}"-->
+            <!--                binding:items="@{viewModel.items}"-->
+            <!--                binding:onPageSelectedCommand="@{viewModel.onPageSelectedCommand}"-->
+            <!--                binding:pageTitles="@{viewModel.pageTitles}">-->
+
+            <!--            </androidx.viewpager.widget.ViewPager>-->
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/question_vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="距离考试结束还剩："
+                    android:textSize="20sp"></TextView>
+
+                <TextView
+                    android:id="@+id/countDownTimerTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textColor="@color/red"
+                    android:textSize="20sp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/main_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="上一题"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.lastQuestion}">
+
+                </TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="下一题"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.nextQuestion}">
+
+                </TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="题目"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.questionListCommand}">
+
+                </TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.zhks.safetyproduction.wight.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.loadingVisible}">
+
+        </com.zhks.safetyproduction.wight.LoadingView>
+    </RelativeLayout>
+</layout>

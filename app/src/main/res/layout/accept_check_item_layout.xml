@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.AcceptanceCheckItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        binding:onClickCommand="@{viewModel.itemClick}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_white_bg_5"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/risk_rectification_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{viewModel.acceptCheckReason}"
+                android:textSize="16sp"
+                tools:text=""></TextView>
+            <TextView
+                android:id="@+id/risk_rectification_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/risk_rectification_reason"
+                android:text="@{viewModel.acceptCheckCotent}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:text="一号井"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/risk_rectification_reason"
+                android:text="@{viewModel.acceptCheckDate}"
+                tools:text="2021-12-23"></TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

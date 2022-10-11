@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.ConfirmRectificationViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.ConfirmRectificationActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <LinearLayout
+            android:id="@+id/complete_date_ll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/include"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="整改完成时间"
+                android:textColor="@color/main_color"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/complete_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_white_bg_5"
+                android:gravity="center"
+                android:text=""
+                binding:onClickCommand="@{viewModel.completeDateCommand}">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detail_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/complete_date_ll"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="整改详情"
+                android:textColor="@color/main_color"
+                android:textSize="18sp"></TextView>
+
+            <EditText
+                android:id="@+id/recview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_white_bg_5"
+                android:gravity="top"
+                android:hint="请输入整改详情..."
+                android:minHeight="100dp"
+                android:padding="10dp">
+
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/confirm_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_ll"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="可在此处上传图片"
+            android:textColor="@color/main_color"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/risk_register_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confirm_tips"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/risk_register_rv"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/circle_solid_main_color_5"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="提交"
+            android:textColor="@color/white"
+            binding:onClickCommand="@{viewModel.completeSubmit}">
+
+        </TextView>
+
+        <com.zhks.safetyproduction.wight.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.loadingVisible}" />
+    </RelativeLayout>
+
+</layout>

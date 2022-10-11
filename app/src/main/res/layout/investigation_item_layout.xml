@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.InvestigationItemModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        binding:onClickCommand="@{viewModel.investigationItemCommand}">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/accident_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="事故名称："></TextView>
+
+            <TextView
+                android:id="@+id/accident_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/accident_name_tv"
+                android:text="@{viewModel.accidentName}"
+                android:textSize="16sp"
+                tools:text="1010火灾爆炸事故"></TextView>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/accident_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="事故类别："></TextView>
+
+            <TextView
+                android:id="@+id/accident_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/accident_type_tv"
+                android:text="@{viewModel.accidentType}"
+                android:textSize="16sp"
+                tools:text="类别1"></TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/accident_date_place_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间地点："
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/accident_date_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/accident_date_place_tv"
+                android:text="@{viewModel.date}"
+                android:textSize="16sp"
+                tools:text="1010火灾爆炸事故"></TextView>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="banner_height">170dp</dimen>
+    <dimen name="custom_pop_width">300dp</dimen>
+    <dimen name="custom_pop_height"></dimen>
+    <dimen name="privacy_dialog_width">275dp</dimen>
+    <dimen name="privacy_dialog_height">440dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="choice_width_height">30dp</dimen>
+    <dimen name="update_dialog_width">220dp</dimen>
+    <dimen name="update_dialog_height">350dp</dimen>
+</resources>

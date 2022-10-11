@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.RiskRegisterViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.zhks.safetyproduction.ui.activity.RiskRegisterActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <LinearLayout
+            android:id="@+id/submit_save"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/include">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@color/main_color"
+                android:gravity="center"
+                onClickCommand="@{viewModel.saveRiskClick}"
+                android:text="保存"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@color/main_color"
+                onClickCommand="@{viewModel.submitRiskClick}"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"></TextView>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/submit_save">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_ccc"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_blue_bg"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="基本信息"
+                        android:textColor="@color/white"
+                        tools:text="基本信息"></TextView>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_ccc"></ImageView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐患来源"
+                        android:textSize="16sp"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/risk_source"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.riskSourceCommand}"
+                            tools:text=""></TextView>
+
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/down_arrow"></ImageView>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐患类别"
+                        android:textSize="16sp"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/risk_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.riskCategoryCommand}"
+                            tools:text=""></TextView>
+
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/down_arrow"></ImageView>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="10dp"-->
+                <!--                    -->
+                <!--                    android:gravity="center_vertical"-->
+                <!--                    android:orientation="horizontal">-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:text="隐患级别"-->
+                <!--                        android:textSize="16sp"></TextView>-->
+
+                <!--                    <RelativeLayout-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="35dp">-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/risk_level"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:layout_marginLeft="10dp"-->
+                <!--                            android:layout_marginRight="10dp"-->
+                <!--                            android:background="@drawable/round_white_bg_5"-->
+                <!--                            android:gravity="center_vertical"-->
+                <!--                            android:paddingLeft="10dp"-->
+                <!--                            android:text=""-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:textSize="16sp"-->
+                <!--                            binding:onClickCommand="@{viewModel.riskLevelCommand}"-->
+                <!--                            tools:text=""></TextView>-->
+
+
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="15dp"-->
+                <!--                            android:layout_height="15dp"-->
+                <!--                            android:layout_alignParentRight="true"-->
+                <!--                            android:layout_centerVertical="true"-->
+                <!--                            android:layout_marginRight="10dp"-->
+                <!--                            android:src="@drawable/down_arrow"></ImageView>-->
+                <!--                    </RelativeLayout>-->
+                <!--                </LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐患所在单位"
+                        android:textSize="16sp"
+                        tools:text="隐患所在单位"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/riskCompany"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请选择隐患所在单位"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.riskCompanyCommand}"
+                            tools:text=""></TextView>
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/down_arrow"></ImageView>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐患排查人"
+                        android:textSize="16sp"
+                        tools:text="隐患排查人"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/troubleshootingMan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请选择隐患排查人"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.troubleshootingManCommand}"
+                            tools:text=""></TextView>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐患发现时间"
+                        android:textSize="16sp"
+                        tools:text="隐患发现时间"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/riskFindDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.riskFindDateCommand}"
+                            tools:text=""></TextView>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="隐患地点"
+                        android:textSize="16sp"></TextView>
+
+
+                    <TextView
+                        android:id="@+id/risk_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/round_white_bg_5"
+                        android:gravity="center_vertical"
+                        android:hint="请选择隐患地点"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        binding:onClickCommand="@{viewModel.riskAddressCommand}"
+                        tools:text=""></TextView>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/risk_ms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="隐患描述"
+                        android:textSize="16sp"></TextView>
+
+                    <EditText
+                        android:id="@+id/risk_describe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/risk_ms"
+                        android:background="@drawable/round_white_bg_5"
+                        android:gravity="top"
+                        android:hint="请输入隐患描述..."
+                        android:minHeight="100dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="@{viewModel.riskDescribeTv}"
+                        tools:text=""></EditText>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_ccc"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_orange_bg"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="五定信息"
+                        android:textColor="@color/white"
+                        tools:text="五定信息"></TextView>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_ccc"></ImageView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:text="整改类型"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/rectificationType"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.rectificationTypeCommand}"
+                            tools:text=""></TextView>
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"
+                            android:src="@drawable/down_arrow"></ImageView>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="整改期限"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/rectification_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/round_white_bg_5"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        binding:onClickCommand="@{viewModel.rectificationDateCommand}"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="整改责任人"
+                        android:textSize="16sp"
+                        tools:text="整改责任人"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/rectification_personnel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请选择整改责任人"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.rectificationPersonnelCommand}"
+                            tools:text=""></TextView>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="验收责任人"
+                        android:textSize="16sp"
+                        tools:text="验收责任人"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/acceptance_personnel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请选择验收责任人"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.acceptanceCommand}"
+                            tools:text=""></TextView>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="验收部门"
+                        android:textSize="16sp"
+                        tools:text="验收部门"></TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp">
+
+                        <TextView
+                            android:id="@+id/acceptance_dept"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请选择验收人员"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text=""></TextView>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="整改措施"
+                    android:textSize="16sp"
+                    tools:text="整改措施"></TextView>
+
+                <EditText
+                    android:id="@+id/rectificationMeasures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/risk_ms"
+                    android:background="@drawable/round_white_bg_5"
+                    android:gravity="top"
+                    android:hint="请输入整改措施..."
+                    android:minHeight="100dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="5dp"
+                    tools:text=""></EditText>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.zdyhDataVisible}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="是否采取临时措施"
+                            android:textSize="@dimen/sp_16"></TextView>
+
+                        <RadioGroup
+                            android:id="@+id/lscs_radiogroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/lscs_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="是">
+
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/lscs_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="否">
+
+                            </RadioButton>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="资金来源"
+                            android:textSize="16sp"
+                            tools:text="资金来源"></TextView>
+
+
+                        <EditText
+                            android:id="@+id/source_of_funds"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请输入资金来源"
+                            android:minHeight="35dp"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text=""></EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="治理费用（元）"
+                            android:textSize="16sp"
+                            tools:text="治理费用（元）"></TextView>
+
+
+                        <EditText
+                            android:id="@+id/governance_costs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请输入治理费用"
+                            android:inputType="number"
+                            android:minHeight="35dp"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text=""></EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="1dp"
+                            android:background="@color/gray_ccc"></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_blue_bg"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="5dp"
+                            android:text="备案信息"
+                            android:textColor="@color/white"
+                            tools:text="备案信息"></TextView>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/gray_ccc"></ImageView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="备案状态"
+                            android:textSize="16sp"
+                            tools:text="备案状态"></TextView>
+
+                        <RadioGroup
+                            android:id="@+id/bazt_radiogroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/bazt_wba"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_weight="1"
+                                android:text="未备案">
+
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/bazt_yba"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="已备案">
+
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/bazt_yhx"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="已核销">
+
+                            </RadioButton>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="是否挂牌督办"
+                            android:textSize="16sp"></TextView>
+
+                        <RadioGroup
+                            android:id="@+id/gpdb_radiogroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/gpdb_yes"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_weight="1"
+                                android:text="是">
+
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/gpdb_no"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="否">
+
+                            </RadioButton>
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="备案编号"
+                            android:textSize="16sp"></TextView>
+
+
+                        <EditText
+                            android:id="@+id/filing_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请输入备案编号"
+                            android:minHeight="35dp"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text=""></EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="受理单位"
+                            android:textSize="16sp"></TextView>
+
+
+                        <EditText
+                            android:id="@+id/acceptance_unit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:hint="请输入受理单位"
+                            android:minHeight="35dp"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text=""></EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="备案日期"
+                            android:textSize="16sp"></TextView>
+
+
+                        <TextView
+                            android:id="@+id/beian_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/round_white_bg_5"
+                            android:gravity="center_vertical"
+                            android:minHeight="35dp"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            binding:onClickCommand="@{viewModel.beianClick}"
+                            tools:text=""></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="可在此处上传图片"
+                    android:textSize="18sp">
+
+                </TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/risk_register_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <com.zhks.safetyproduction.wight.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.loadingVisible}" />
+    </RelativeLayout>
+</layout>

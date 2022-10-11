@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhks.safetyproduction">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:icon="@drawable/icon_app"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/app_logo_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/SafeTyTheme"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="adjustPan">
+        <activity
+            android:name=".ui.activity.PersonnelMutilQueryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.QuestionListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AqqrpbDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AqqrpbjlListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CancelCaseDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CancelCaseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AcceptConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.PatrolPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RiskCheckOptionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RiskInspectionRecordsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ConfirmRectificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.DraftListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.RiskListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.PersonnelQueryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.RiskCheckDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.MultistageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.LicenceCheckDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.LicenceCheckListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.HomeItemCommonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.NewsDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.QuestionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.MinutesOfTheMeetingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.InvestigationDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.InvestigationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.AccidentDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.RiskManagerDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.HiddenReportDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.EvidenceUploadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.AcceptanceCheckActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.DelayRectificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.RiskRectificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.RiskRegisterActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeCheckDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeCheckListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.Test"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.NoticeDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SiteSafetyActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafetyTrainingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AccidentManagementActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.RiskManagementActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.StaffParticipateInActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeCheckActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.NoticeListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.TodoListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.TodoDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.SettingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ChangePwdActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.zhks.safetyproduction"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public" />
+        </provider>
+    </application>
+
+</manifest>

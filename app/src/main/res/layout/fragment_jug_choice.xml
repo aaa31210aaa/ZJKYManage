@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.JugChoiceFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/question_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/choiceNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="1."></TextView>
+
+                <TextView
+                    android:id="@+id/question_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_blue_bg_5"
+                    android:padding="5dp"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:textColor="@color/white"
+                    android:textSize="13sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/jugTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/question_type"
+                    android:textSize="16sp"
+                    tools:text="驾驶机动车驾驶机动车驾驶机动车驾驶机动车驾驶机动车驾驶机动车驾驶机动车"></TextView>
+            </LinearLayout>
+
+
+            <RadioGroup
+                android:id="@+id/judgeChoiceRg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question_ll"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:id="@+id/jugAnswerA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:button="@drawable/single_choice_a_selector"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:text=""
+                    android:textSize="16sp"
+                    tools:text="答案A">
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/jugAnswerB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:button="@drawable/single_choice_b_selector"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:text=""
+                    android:textSize="16sp"
+                    tools:text="答案B"></RadioButton>
+            </RadioGroup>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.RiskCheckOptionsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.RiskCheckOptionsActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel.toolbarViewModel}"></include>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/banner_height"
+            android:background="@drawable/main_banner_img"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="岗位自查"
+            android:gravity="center"
+            binding:onClickCommand="@{viewModel.postSelfCommand}"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="18sp"
+            android:background="@drawable/circle_solid_white_5"></TextView>
+
+        <TextView
+            android:id="@+id/leaderPatrol"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="领导巡查"
+            android:gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            binding:onClickCommand="@{viewModel.leaderPatrolCommand}"
+            android:visibility="@{viewModel.leaderPatrolVisible}"
+            android:textSize="18sp"
+            android:background="@drawable/circle_solid_white_5"></TextView>
+    </LinearLayout>
+</layout>

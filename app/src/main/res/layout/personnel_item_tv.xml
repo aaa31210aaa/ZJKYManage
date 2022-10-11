@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zhks.safetyproduction.viewmodel.PersonnelQueryItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        binding:onClickCommand="@{viewModel.personnelItemCommand}">
+
+        <TextView
+            android:id="@+id/personnel_item_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:text="@{viewModel.personnelItemTv}"
+            android:textSize="18sp"
+            tools:text="测试"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_ccc"
+            android:layout_below="@+id/personnel_item_tv"></View>
+    </RelativeLayout>
+</layout>
